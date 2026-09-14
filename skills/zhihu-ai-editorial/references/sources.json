@@ -1,0 +1,130 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": "aihot-selected",
+      "name": "AIHOT 精选",
+      "kind": "aihot",
+      "url": "https://aihot.news/api/v1/items?mode=selected&window=24h&limit=50",
+      "tier": "discovery",
+      "trust": 0.72,
+      "tags": ["ai", "中文", "热点"]
+    },
+    {
+      "id": "openai-news",
+      "name": "OpenAI News",
+      "kind": "feed",
+      "url": "https://openai.com/news/rss.xml",
+      "tier": "fact",
+      "trust": 0.98,
+      "tags": ["openai", "模型", "产品"]
+    },
+    {
+      "id": "google-deepmind",
+      "name": "Google DeepMind",
+      "kind": "feed",
+      "url": "https://deepmind.google/blog/rss.xml",
+      "tier": "fact",
+      "trust": 0.98,
+      "tags": ["google", "研究", "模型"]
+    },
+    {
+      "id": "google-ai",
+      "name": "Google AI",
+      "kind": "feed",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/rss/",
+      "tier": "fact",
+      "trust": 0.96,
+      "tags": ["google", "产品", "模型"]
+    },
+    {
+      "id": "huggingface-blog",
+      "name": "Hugging Face Blog",
+      "kind": "feed",
+      "url": "https://huggingface.co/blog/feed.xml",
+      "tier": "fact",
+      "trust": 0.92,
+      "tags": ["开源", "模型", "论文"]
+    },
+    {
+      "id": "github-ai-ml",
+      "name": "GitHub AI & ML",
+      "kind": "feed",
+      "url": "https://github.blog/ai-and-ml/feed/",
+      "tier": "fact",
+      "trust": 0.92,
+      "tags": ["github", "开发者", "agent"]
+    },
+    {
+      "id": "openai-codex-releases",
+      "name": "OpenAI Codex Releases",
+      "kind": "feed",
+      "url": "https://github.com/openai/codex/releases.atom",
+      "tier": "fact",
+      "trust": 0.96,
+      "tags": ["codex", "agent", "开发工具"]
+    },
+    {
+      "id": "gemini-cli-releases",
+      "name": "Gemini CLI Releases",
+      "kind": "feed",
+      "url": "https://github.com/google-gemini/gemini-cli/releases.atom",
+      "tier": "fact",
+      "trust": 0.96,
+      "tags": ["gemini", "agent", "开发工具"]
+    },
+    {
+      "id": "anthropic-claude-code-releases",
+      "name": "Claude Code Releases",
+      "kind": "feed",
+      "url": "https://github.com/anthropics/claude-code/releases.atom",
+      "tier": "fact",
+      "trust": 0.96,
+      "tags": ["claude", "agent", "开发工具"]
+    },
+    {
+      "id": "simon-willison",
+      "name": "Simon Willison",
+      "kind": "feed",
+      "url": "https://simonwillison.net/atom/everything/",
+      "tier": "discovery",
+      "trust": 0.9,
+      "tags": ["agent", "llm", "实测"]
+    },
+    {
+      "id": "hacker-news",
+      "name": "Hacker News",
+      "kind": "feed",
+      "url": "https://news.ycombinator.com/rss",
+      "tier": "discovery",
+      "trust": 0.62,
+      "tags": ["技术", "产品", "社区"]
+    },
+    {
+      "id": "arxiv-cs-ai",
+      "name": "arXiv cs.AI",
+      "kind": "feed",
+      "url": "https://rss.arxiv.org/rss/cs.AI",
+      "tier": "fact",
+      "trust": 0.9,
+      "tags": ["论文", "研究", "agent"]
+    }
+  ],
+  "zhihu_queries": [
+    "AI Agent 实测",
+    "AI Agent 工作流",
+    "Codex 怎么用",
+    "Claude Code 怎么用",
+    "Gemini CLI 怎么用",
+    "AI 自动化 工作",
+    "AI 工具 对比",
+    "AI 产品经理"
+  ],
+  "topic_terms": [
+    "agent", "智能体", "workflow", "工作流", "automation", "自动化",
+    "codex", "claude", "gemini", "openai", "openrouter", "llm", "模型", "skill", "mcp",
+    "benchmark", "evaluation", "评测", "实测", "browser", "浏览器",
+    "coding", "编程", "productivity", "效率", "cost", "价格", "api",
+    "voice", "语音", "prompt", "提示词", "security", "安全"
+  ]
+}
