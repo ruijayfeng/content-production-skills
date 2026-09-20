@@ -11,6 +11,30 @@
       "tags": ["ai", "中文", "热点"]
     },
     {
+      "id": "qbitai",
+      "name": "量子位",
+      "kind": "feed",
+      "url": "https://www.qbitai.com/feed",
+      "tier": "discovery",
+      "trust": 0.78,
+      "tags": ["ai", "中文", "国内", "模型", "产品"]
+    },
+    {
+      "id": "ithome-ai",
+      "name": "IT之家 AI 关键词快讯",
+      "kind": "feed",
+      "url": "https://www.ithome.com/rss/",
+      "tier": "discovery",
+      "trust": 0.72,
+      "tags": ["ai", "中文", "国内", "科技快讯"],
+      "match_scope": "title",
+      "include_terms": [
+        "人工智能", "生成式 AI", "大模型", "语言模型", "多模态", "智能体", "Agent",
+        "DeepSeek", "通义", "千问", "Qwen", "Kimi", "豆包", "智谱", "GLM", "混元", "文心",
+        "OpenAI", "ChatGPT", "Claude", "Gemini", "Sora", "Grok", "Copilot"
+      ]
+    },
+    {
       "id": "openai-news",
       "name": "OpenAI News",
       "kind": "feed",
@@ -123,6 +147,7 @@
   "topic_terms": [
     "agent", "智能体", "workflow", "工作流", "automation", "自动化",
     "codex", "claude", "gemini", "openai", "openrouter", "llm", "模型", "skill", "mcp",
+    "deepseek", "通义", "千问", "qwen", "kimi", "豆包", "智谱", "glm", "混元", "文心",
     "benchmark", "evaluation", "评测", "实测", "browser", "浏览器",
     "coding", "编程", "productivity", "效率", "cost", "价格", "api",
     "voice", "语音", "prompt", "提示词", "security", "安全"

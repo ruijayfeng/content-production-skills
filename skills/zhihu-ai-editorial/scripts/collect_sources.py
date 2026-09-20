@@ -233,6 +233,29 @@ def relevance(item: dict[str, Any], terms: list[str]) -> float:
     return round(min(1.0, matched / 4.0) * 0.71 + trust * 0.15 + tier_bonus + tag_bonus, 4)
 
 
+def contains_term(content: str, term: str) -> bool:
+    """Match Chinese phrases directly and ASCII terms as standalone tokens."""
+    needle = term.casefold().strip()
+    if not needle:
+        return False
+    if re.fullmatch(r"[a-z0-9][a-z0-9._+\-]*", needle):
+        pattern = rf"(?<![a-z0-9]){re.escape(needle)}(?![a-z0-9])"
+        return re.search(pattern, content) is not None
+    return needle in content
+
+
+def source_item_allowed(item: dict[str, Any], source: dict[str, Any]) -> bool:
+    """Apply an optional per-source allowlist to noisy general-interest feeds."""
+    include_terms = source.get("include_terms") or []
+    if not include_terms:
+        return True
+    if source.get("match_scope") == "title":
+        content = item.get("title", "").casefold()
+    else:
+        content = " ".join([item.get("title", ""), item.get("summary", "")]).casefold()
+    return any(contains_term(content, str(term)) for term in include_terms)
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--config", required=True, type=Path)
@@ -296,8 +319,13 @@ def main() -> int:
                 "last_success_at": iso(now),
                 "last_error": None,
             }
+            eligible_items = [item for item in items if source_item_allowed(item, source)]
             source_status.append({
-                "id": source_id, "name": source.get("name"), "status": outcome, "items": len(items),
+                "id": source_id,
+                "name": source.get("name"),
+                "status": outcome,
+                "items": len(items),
+                "eligible_items": len(eligible_items),
             })
         except Exception as exc:  # each source must fail independently
             state["sources"][source_id] = {
@@ -311,7 +339,7 @@ def main() -> int:
             })
             continue
 
-        for item in items[: max(args.limit_per_source, 1)]:
+        for item in eligible_items[: max(args.limit_per_source, 1)]:
             item_time = parse_time(item.get("published_at")) or parse_time(item.get("discovered_at")) or now
             # Future-dated feed entries are retained only within a small clock-skew allowance.
             if item_time < cutoff or item_time > now + timedelta(hours=6):
