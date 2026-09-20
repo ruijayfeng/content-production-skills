@@ -1,4 +1,4 @@
 interface:
-  display_name: "知乎 AI 选题编辑部"
-  short_description: "收集新鲜信号、筛选候选题并确认最终写什么"
-  default_prompt: "使用 $zhihu-ai-editorial 运行今天的知乎 AI 选题编辑部，给我候选题、评分和逐条确认区，到确认写什么为止。"
+  display_name: "知乎 AI 灵感雷达"
+  short_description: "刷新实时信息源，整理知乎创作灵感与方向"
+  default_prompt: "使用 $zhihu-ai-editorial 运行今天的 AI 灵感雷达，给我新鲜信号、方向分组和来源状态，不做严格打分或文章写作。"
