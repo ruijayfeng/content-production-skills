@@ -1,4 +1,4 @@
 interface:
   display_name: "知乎 AI 选题编辑部"
-  short_description: "收集新鲜信号并生成可反馈校准的知乎选题库"
-  default_prompt: "使用 $zhihu-ai-editorial 运行今天的知乎 AI 选题编辑部，生成候选题、评分、资料包和实测任务书。"
+  short_description: "收集新鲜信号、筛选候选题并确认最终写什么"
+  default_prompt: "使用 $zhihu-ai-editorial 运行今天的知乎 AI 选题编辑部，给我候选题、评分和逐条确认区，到确认写什么为止。"
